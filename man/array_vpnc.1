@@ -1,0 +1,72 @@
+.\"Created with GNOME Manpages Editor Wizard
+.\"http://sourceforge.net/projects/gmanedit2
+.TH array_vpnc 1 "March 25, 2013" "Linux" "Array Networks L3VPN Tool"
+
+.SH NAME
+array_vpnc \- Array Networks L3VPN CLI Tool.
+
+.SH SYNOPSIS
+
+.B array_vpnc 
+[-h] [-version] <argument>
+.br
+.B array_vpnc
+-n|-hostname <VIRTUALSITE_NAME> -u|-username <VPNUSER> [-p|-passwd <VPNPASSWD>] [-o|-port <VPNPORT>]
+.br
+.B array_vpnc
+-stop
+.
+
+.SH DESCRIPTION
+Array Networks L3VPN Tools allows connecting to Array Networks vpns from the linux command line.
+
+.SH OPTIONS
+.PP
+.B
+-h
+.RS 4
+Displays this help page and exits.
+.RE
+.PP
+.B
+-version
+.RS 4
+Displays Array Networks L3VPN tool version and exits.
+.RE
+.PP
+.B
+-n|-hostname <VIRTUALSITE_NAME>
+.RS 4
+Use to specify the VIRTUALSITE_NAME or vpn hostname to connect to.
+.RE
+.PP
+.B
+-u|-username <VPNUSER>
+.RS 4
+Used to specify the vpn user VPNUSER to login to the vpn as.
+.RE
+.PP
+.B
+-p|-passwd <VPNPASSWD>
+.RS 4
+Use to specify the vpn user passwd VPNPASSWD for vpn user VPNUSER. If not supplied, you will be
+prompted for VPNPASSWD when VIRTUALSITE_NAME has been successfully reached which will be read from
+stdin.
+.RE
+.PP
+.B
+-o|-port <VPNPORT>
+.RS 4
+Used to specify the TCP port on VIRTUALSITE_NAME to connect to. If not supplied, it will default to
+TCP port 443.
+.RE
+.PP
+.B
+-stop
+.RS 4
+Used to stop an existing vpn connection.
+.RE
+
+.SH "EXIT STATUS"
+Do not count on the exit status of this tool being an indicator of a successful vpn connection as
+it almost always returns 0. Instead check for the existence of the actual process.
